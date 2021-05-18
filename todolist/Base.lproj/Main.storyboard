@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="todolist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gz-MJ-JuY">
+                                <rect key="frame" x="113" y="76" width="188" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBw-iN-fOI">
+                                <rect key="frame" x="339" y="54" width="44" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="medium" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6WU-nz-YJK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ro-s7-mqf">
+                                <rect key="frame" x="34" y="54" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="medium" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qp4-sx-xeG"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zqa-tH-q4K">
+                                <rect key="frame" x="0.0" y="141" width="414" height="721"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="checking cell" id="yGH-iB-zrT" customClass="CheckBoxTableViewCell" customModule="todolist" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yGH-iB-zrT" id="8VC-RN-Txc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C17-b9-MMh">
+                                                    <rect key="frame" x="20" y="11" width="334" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXP-eD-2tB" customClass="Checkbox" customModule="todolist" customModuleProvider="target">
+                                                    <rect key="frame" x="354" y="1.5" width="40" height="40"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="ZLd-g1-8fk"/>
+                                                        <constraint firstAttribute="height" constant="40" id="gKM-tM-Wab"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="checking" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="checking:" destination="yGH-iB-zrT" eventType="valueChanged" id="acR-Cx-ykq"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sXP-eD-2tB" firstAttribute="leading" secondItem="C17-b9-MMh" secondAttribute="trailing" id="NNo-uV-dcO"/>
+                                                <constraint firstItem="C17-b9-MMh" firstAttribute="leading" secondItem="8VC-RN-Txc" secondAttribute="leadingMargin" id="NSR-wz-ZuA"/>
+                                                <constraint firstItem="sXP-eD-2tB" firstAttribute="trailing" secondItem="8VC-RN-Txc" secondAttribute="trailingMargin" id="ONC-Y3-Mx9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="C17-b9-MMh" secondAttribute="bottom" id="XHz-8s-upb"/>
+                                                <constraint firstItem="C17-b9-MMh" firstAttribute="top" secondItem="8VC-RN-Txc" secondAttribute="topMargin" id="ub2-E8-fO1"/>
+                                                <constraint firstItem="sXP-eD-2tB" firstAttribute="centerY" secondItem="8VC-RN-Txc" secondAttribute="centerY" id="yIg-V0-GoQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Label" destination="C17-b9-MMh" id="V5D-DP-1LB"/>
+                                            <outlet property="checkbox" destination="sXP-eD-2tB" id="Fa2-YK-BCT"/>
+                                            <segue destination="Urv-MT-E4t" kind="show" destinationCreationSelector="todoVC:" id="KJU-65-35C"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zQ7-Ya-eLq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Q2L-KF-Yds"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3gz-MJ-JuY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="0WU-SB-FRO"/>
+                            <constraint firstItem="3gz-MJ-JuY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="3qy-zY-JE4"/>
+                            <constraint firstItem="Zqa-tH-q4K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bjp-Pd-11E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zqa-tH-q4K" secondAttribute="bottom" id="Owc-ft-2P6"/>
+                            <constraint firstItem="3gz-MJ-JuY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V3P-Ck-2Lb"/>
+                            <constraint firstItem="Zqa-tH-q4K" firstAttribute="top" secondItem="3gz-MJ-JuY" secondAttribute="bottom" constant="28" id="eNg-ao-rmv"/>
+                            <constraint firstItem="Zqa-tH-q4K" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fFi-64-n5l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTabelView" destination="Zqa-tH-q4K" id="bdI-kO-Gkh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-630" y="-350"/>
+        </scene>
+        <!--Todo View Controller-->
+        <scene sceneID="ayy-b2-S3L">
+            <objects>
+                <viewController storyboardIdentifier="toDoViewId" id="Urv-MT-E4t" customClass="todoViewController" customModule="todolist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsc-yt-pwE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-Jh-KyL">
+                                <rect key="frame" x="20" y="68" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkW-Ro-B45">
+                                <rect key="frame" x="355" y="4" width="21" height="22"/>
+                                <state key="normal" image="square.and.pencil" catalog="system"/>
+                                <connections>
+                                    <action selector="save:" destination="gZl-vo-6Zu" eventType="touchUpInside" id="ZCm-CI-ohn"/>
+                                    <action selector="save:" destination="Urv-MT-E4t" eventType="touchUpInside" id="g9T-qU-npT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a40-M4-AGf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wkW-Ro-B45" firstAttribute="top" secondItem="a40-M4-AGf" secondAttribute="top" constant="4" id="B2V-PY-4kZ"/>
+                            <constraint firstItem="a40-M4-AGf" firstAttribute="trailing" secondItem="wkW-Ro-B45" secondAttribute="trailing" constant="38" id="E7e-Gv-8S6"/>
+                            <constraint firstItem="sAe-Jh-KyL" firstAttribute="top" secondItem="wkW-Ro-B45" secondAttribute="bottom" constant="42" id="KFc-A0-CgZ"/>
+                            <constraint firstItem="sAe-Jh-KyL" firstAttribute="leading" secondItem="a40-M4-AGf" secondAttribute="leading" constant="20" id="ovJ-aM-27B"/>
+                            <constraint firstItem="a40-M4-AGf" firstAttribute="trailing" secondItem="sAe-Jh-KyL" secondAttribute="trailing" constant="20" id="tHb-sa-Rho"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DkZ-c6-53a"/>
+                    <connections>
+                        <outlet property="textfiled" destination="sAe-Jh-KyL" id="AIL-0g-Dqh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqL-oJ-aiI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gZl-vo-6Zu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="249.27536231884059" y="-350.22321428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
